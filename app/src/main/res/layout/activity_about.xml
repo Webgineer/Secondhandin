@@ -1,83 +1,92 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="#fff"
     android:padding="10dp"
+    tools:context=".MainActivity"
+    android:weightSum="10">
 
-    tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/pic_3"
+        android:layout_weight="2"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.05"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tour Dates"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:layout_weight="0.2"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tickets"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:layout_weight="0.2"
+            />
+
+        <Button
+            android:id="@+id/buttonAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:onClick="onAboutButtonClick"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:layout_weight="0.2"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:onClick="onContactButtonClick"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:layout_weight="0.2"
+            />
+
+        <Button
+            android:id="@+id/buttonMain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="MAIN"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:layout_weight="0.2"
+            android:onClick="onMainButtonClick"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"
+        android:src="@drawable/pic11"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/pic_3"
-        />
-
-
-    <TableLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:paddingBottom="10dp"
-        >
-
-        <TableRow>
-
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:text="Tourdates"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:text="tickets"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                />
-
-            <Button
-                android:id="@+id/about1"
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:text="about"
-                android:onClick="onAboutButtonClick"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                />
-
-            <Button
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:text="contact"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                />
-
-            <Button
-                android:id="@+id/Back1"
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:text="back"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                />
-        </TableRow>
-
-    </TableLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
         android:text="@string/volbeatText"
 
         />
 
-
 </LinearLayout>
+

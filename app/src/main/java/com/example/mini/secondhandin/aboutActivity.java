@@ -1,9 +1,11 @@
 package com.example.mini.secondhandin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class aboutActivity extends AppCompatActivity {
 
@@ -33,5 +35,15 @@ public class aboutActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onContactButtonClick(View view) {
+        Intent emailIntent = new Intent (this, emailActivity.class);
+        startActivity(emailIntent);
+    }
+
+    public void onMainButtonClick(View view) {
+        Intent mainIntent = new Intent (this, MainActivity.class);
+        startActivity(mainIntent);
     }
 }

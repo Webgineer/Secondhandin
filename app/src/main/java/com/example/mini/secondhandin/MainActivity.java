@@ -47,5 +47,4 @@ public class MainActivity extends AppCompatActivity {
         Intent emailIntent = new Intent (this, emailActivity.class);
         startActivity(emailIntent);
     }
-
 }

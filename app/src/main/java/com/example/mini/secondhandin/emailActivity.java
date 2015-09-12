@@ -77,4 +77,15 @@ public class emailActivity extends AppCompatActivity {
         subject.setText("");
         body.setText("");
     }
+
+    public void onAboutButtonClick(View view) {
+
+        Intent aboutIntent = new Intent(this, aboutActivity.class);
+        startActivity(aboutIntent);
+    }
+
+    public void onMainButtonClick(View view) {
+        Intent mainIntent = new Intent (this, MainActivity.class);
+        startActivity(mainIntent);
+    }
 }
