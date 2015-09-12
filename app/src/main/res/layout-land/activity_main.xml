@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pic_3"
+        />
+
+    <TableLayout
+        android:layout_toRightOf="@id/header"
+        android:paddingLeft="50dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        >
+        <TableRow>
+            <Button
+                android:text="Tour dates"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:text="tickets"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                />
+        </TableRow>
+
+
+        <TableRow>
+
+            <Button
+                android:text="About"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/contacts"
+                android:text="contact"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/Back1"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:text="back"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:background="@drawable/pic_7"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+</RelativeLayout>
