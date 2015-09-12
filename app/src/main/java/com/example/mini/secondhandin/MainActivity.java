@@ -42,4 +42,10 @@ public class MainActivity extends AppCompatActivity {
         Intent aboutIntent = new Intent(this, aboutActivity.class);
         startActivity(aboutIntent);
     }
+
+    public void onContactButtonClick(View view) {
+        Intent emailIntent = new Intent (this, emailActivity.class);
+        startActivity(emailIntent);
+    }
+
 }
