@@ -72,27 +72,12 @@
     </TableLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="10dp"
-        android:background="@drawable/pic_7"
+        android:text="@string/volbeatText"
 
         />
 
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:background="@drawable/pic_10"
-            android:layout_alignParentBottom="true"
-            />
-
-
-    </RelativeLayout>
 
 </LinearLayout>
