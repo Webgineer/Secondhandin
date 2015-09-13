@@ -3,9 +3,11 @@ package com.example.mini.secondhandin;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class aboutActivity extends AppCompatActivity {
 
@@ -13,6 +15,8 @@ public class aboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        TextView aboutVolbeatTextView = (TextView)findViewById(R.id.textViewAboutVolbeat);
+        aboutVolbeatTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override
@@ -45,5 +49,11 @@ public class aboutActivity extends AppCompatActivity {
     public void onMainButtonClick(View view) {
         Intent mainIntent = new Intent (this, MainActivity.class);
         startActivity(mainIntent);
+    }
+
+    public void onTextViewMoreInfoClick(View view) {
+        Intent webViewVolbeat = new Intent (this, webViewAboutVolbeatActivity.class);
+        startActivity(webViewVolbeat);
+
     }
 }

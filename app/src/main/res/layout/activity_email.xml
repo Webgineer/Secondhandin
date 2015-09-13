@@ -15,6 +15,7 @@
         android:src="@drawable/pic_3"
         android:layout_weight="2"
         />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,19 +27,10 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Tour Dates"
+            android:text="Tours"
             android:textSize="10dp"
             android:textColor="#fff"
-            android:layout_weight="0.2"
-            />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Tickets"
-            android:textSize="10dp"
-            android:textColor="#fff"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             />
 
         <Button
@@ -49,7 +41,7 @@
             android:onClick="onAboutButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             />
 
         <Button
@@ -59,7 +51,7 @@
             android:onClick="onContactButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             />
 
         <Button
@@ -69,8 +61,7 @@
             android:text="MAIN"
             android:textSize="10dp"
             android:textColor="#fff"
-            android:layout_weight="0.2"
-            android:onClick="onMainButtonClick"
+            android:layout_weight="0.25"
             />
     </LinearLayout>
 

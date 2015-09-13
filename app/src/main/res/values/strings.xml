@@ -7,6 +7,11 @@
     <string name="volbeatText">Volbeat are a Danish metal band which was formed in Copenhagen.
         They play a fusion of rock and roll, heavy metal and rockabilly. They are inspired by
         classic rock and roll artists such as Elvis Presley and Johnny Cash, as well as modern hard
-        rock, thrash metal, heavy metal, alternative rock and hardcore groups.</string>
+        rock, thrash metal, heavy metal, alternative rock and hardcore groups. Their current line-up
+        consists of vocalist and guitarist Michael Poulsen, bassist Anders Kjølholm, guitarist
+        Rob Caggiano (ex-Anthrax), and drummer Jon Larsen.The band is signed to Dutch label Mascot
+        Records and has released five studio albums and one DVD. </string>
     <string name="title_activity_email">Contact</string>
+    <string name="moreInfoAboutVolbeat">More info</string>
+    <string name="title_activity_web_view_about_volbeat">webViewAboutVolbeatActivity</string>
 </resources>
