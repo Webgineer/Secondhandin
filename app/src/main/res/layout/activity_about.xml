@@ -37,7 +37,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="About"
-            android:onClick="onAboutButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"
