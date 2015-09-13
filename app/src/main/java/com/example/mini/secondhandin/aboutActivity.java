@@ -44,16 +44,23 @@ public class aboutActivity extends AppCompatActivity {
     public void onContactButtonClick(View view) {
         Intent emailIntent = new Intent (this, emailActivity.class);
         startActivity(emailIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     public void onMainButtonClick(View view) {
         Intent mainIntent = new Intent (this, MainActivity.class);
         startActivity(mainIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     public void onTextViewMoreInfoClick(View view) {
         Intent webViewVolbeat = new Intent (this, webViewAboutVolbeatActivity.class);
         startActivity(webViewVolbeat);
-
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.to_right);
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         Intent aboutIntent = new Intent(this, aboutActivity.class);
         startActivity(aboutIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     public void onContactButtonClick(View view) {
         Intent emailIntent = new Intent (this, emailActivity.class);
         startActivity(emailIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     //TODO
@@ -53,4 +56,16 @@ public class MainActivity extends AppCompatActivity {
 //        Intent toursIntent = new Intent (this, toursActivity.class);
 //        startActivity(toursIntent);
 //    }
+
+    @Override
+    public void onBackPressed() {
+        if(isTaskRoot())
+        {
+            super.onBackPressed();
+        }
+        else{
+            super.onBackPressed();
+            overridePendingTransition(R.anim.from_left, R.anim.to_right);}
+    }
+
 }

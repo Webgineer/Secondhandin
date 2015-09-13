@@ -82,10 +82,17 @@ public class emailActivity extends AppCompatActivity {
 
         Intent aboutIntent = new Intent(this, aboutActivity.class);
         startActivity(aboutIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     public void onMainButtonClick(View view) {
         Intent mainIntent = new Intent (this, MainActivity.class);
         startActivity(mainIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.to_right);
     }
 }
