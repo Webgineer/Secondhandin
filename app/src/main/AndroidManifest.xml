@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mini.secondhandin" >
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +29,14 @@
         <activity
             android:name=".webViewAboutVolbeatActivity"
             android:label="@string/title_activity_web_view_about_volbeat" >
+        </activity>
+        <activity
+            android:name=".tourActivity"
+            android:label="@string/title_activity_tour" >
+        </activity>
+        <activity
+            android:name=".tourOfContinentActivity"
+            android:label="@string/title_activity_tour_of_content" >
         </activity>
     </application>
 

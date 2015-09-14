@@ -32,13 +32,13 @@
             android:layout_weight="0.25"
             android:onClick="onToursButtonClick"
             />
-            />
 
         <Button
             android:id="@+id/buttonAbout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="About"
+            android:onClick="onAboutButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"
@@ -62,37 +62,71 @@
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"
-            android:onClick="onMainButtonClick"
             />
     </LinearLayout>
 
-    <ImageView
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="1">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="Asia"
+            android:id="@+id/buttonAsia"
+            android:onClick="onButtonAsiaClick"
+            android:layout_weight="0.5"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:background="@drawable/rounded_button"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="Australia"
+            android:id="@+id/buttonAustralia"
+            android:onClick="onButtonAustraliaClick"
+            android:layout_weight="0.5"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:background="@drawable/rounded_button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="1"
+        android:paddingTop="5dp">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="America"
+            android:id="@+id/buttonAmerica"
+            android:onClick="onButtonAmericaClick"
+            android:layout_weight="0.5"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:background="@drawable/rounded_button"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="Europe"
+            android:id="@+id/buttonEurope"
+            android:onClick="onButtonEuropeClick"
+            android:layout_weight="0.5"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:background="@drawable/rounded_button"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/pic_7"
         android:layout_weight="4"
-        android:src="@drawable/pic11"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:id="@+id/textViewAboutVolbeat"
-        android:layout_weight="3"
-        android:paddingTop="10dp"
-        android:text="@string/volbeatText"
-        android:scrollbars = "vertical"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:textColor="#fff"
-        android:textSize="10dp"
-        android:text="@string/moreInfoAboutVolbeat"
-        android:id="@+id/textViewMoreInfo"
-        android:clickable="true"
-        android:onClick="onTextViewMoreInfoClick"
-        android:layout_gravity="right"/>
+        android:paddingTop="5dp" />
 
 </LinearLayout>
-

@@ -21,6 +21,7 @@ public class webViewAboutVolbeatActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         mWebView.loadUrl("https://en.wikipedia.org/wiki/Volbeat");
+        finish();
     }
 
     @Override

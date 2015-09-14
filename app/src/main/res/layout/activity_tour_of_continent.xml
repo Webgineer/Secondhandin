@@ -15,7 +15,6 @@
         android:src="@drawable/pic_3"
         android:layout_weight="2"
         />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Contact"
+            android:onClick="onContactButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"
@@ -61,55 +61,34 @@
             android:text="MAIN"
             android:textSize="10dp"
             android:textColor="#fff"
-            android:onClick="onMainButtonClick"
             android:layout_weight="0.25"
             />
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:src="@drawable/pic12"
-        android:layout_weight="3.25"
-        />
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:weightSum="4"
-        android:orientation="vertical">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Recipient's e-mail address"
-            android:singleLine="true"
-            android:id="@+id/editTextRecipient"
-            android:layout_weight="0.25" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Subject"
-            android:singleLine="true"
-            android:id="@+id/editTextSubject"
-            android:layout_weight="0.25" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Text"
-            android:gravity="top"
-            android:maxLines="2"
-            android:id="@+id/editTextText"
-            android:layout_weight="2.5" />
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="1"
+        android:gravity="center_horizontal">
         <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Send"
-            android:layout_gravity="center"
-            android:textSize="10dp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="Selected Continent"
+            android:id="@+id/buttonSelectedContinent"
+            android:layout_weight="0.5"
+            android:textSize="25dp"
             android:textColor="#fff"
-            android:onClick="onSendButtonClick"/>
+            android:background="@drawable/rounded_button"/>
     </LinearLayout>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/listViewContinent"
+        android:layout_weight="6"
+        android:paddingTop="5dp">
+
+    </ListView>
+
 </LinearLayout>
-
-

@@ -58,9 +58,17 @@ public class aboutActivity extends AppCompatActivity {
         startActivity(webViewVolbeat);
         overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
+
+    public void onToursButtonClick(View view) {
+        Intent toursIntent = new Intent (this, tourActivity.class);
+        startActivity(toursIntent);
+    }
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.from_left, R.anim.to_right);
     }
+
 }

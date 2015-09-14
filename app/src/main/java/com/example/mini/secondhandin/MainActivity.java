@@ -51,11 +51,10 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
-    //TODO
-//    public void onToursButtonClick(View view) {
-//        Intent toursIntent = new Intent (this, toursActivity.class);
-//        startActivity(toursIntent);
-//    }
+    public void onToursButtonClick(View view) {
+        Intent toursIntent = new Intent (this, tourActivity.class);
+        startActivity(toursIntent);
+    }
 
     @Override
     public void onBackPressed() {

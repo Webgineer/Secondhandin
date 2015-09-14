@@ -14,4 +14,34 @@
     <string name="title_activity_email">Contact</string>
     <string name="moreInfoAboutVolbeat">More info</string>
     <string name="title_activity_web_view_about_volbeat">webViewAboutVolbeatActivity</string>
+    <string name="title_activity_tour">tourActivity</string>
+    <string name="title_activity_tour_of_content">tourOfContentActivity</string>
+    <string-array name="tour_america_array">
+        <item>Random Date, Random American place, Random Price</item>
+        <item>Random Date, Random American place, Random Price</item>
+        <item>Random Date, Random American place, Random Price</item>
+        <item>Random Date, Random American place, Random Price</item>
+        <item>Random Date, Random American place, Random Price</item>
+    </string-array>
+    <string-array name="tour_asia_array">
+        <item>Random Date, Random Asian place, Random Price</item>
+        <item>Random Date, Random Asian place, Random Price</item>
+        <item>Random Date, Random Asian place, Random Price</item>
+        <item>Random Date, Random Asian place, Random Price</item>
+        <item>Random Date, Random Asian place, Random Price</item>
+    </string-array>
+    <string-array name="tour_europe_array">
+        <item>Random Date, Random European place, Random Price</item>
+        <item>Random Date, Random European place, Random Price</item>
+        <item>Random Date, Random European place, Random Price</item>
+        <item>Random Date, Random European place, Random Price</item>
+        <item>Random Date, Random European place, Random Price</item>
+    </string-array>
+    <string-array name="tour_australia_array">
+        <item>Random Date, Random Australian place, Random Price</item>
+        <item>Random Date, Random Australian place, Random Price</item>
+        <item>Random Date, Random Australian place, Random Price</item>
+        <item>Random Date, Random Australian place, Random Price</item>
+        <item>Random Date, Random Australian place, Random Price</item>
+    </string-array>
 </resources>
