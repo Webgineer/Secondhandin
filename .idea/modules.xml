@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MOBi2HellesSecondHandIn.iml" filepath="$PROJECT_DIR$/MOBi2HellesSecondHandIn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Secondhandin.iml" filepath="$PROJECT_DIR$/Secondhandin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
