@@ -49,36 +49,22 @@ public class tourActivity extends AppCompatActivity {
     }
 
     public void onButtonAmericaClick(View view) {
-            Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
-
-            buttonText = buttonAmerica.getText().toString();
-            contentToursIntent.putExtra("fromTourActivity", buttonText);
-            startActivityForResult(contentToursIntent, 999);
+        onOneOfTheContentClick(buttonAmerica);
     }
 
     public void onButtonAsiaClick(View view) {
-        Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
-
-        buttonText = buttonAsia.getText().toString();
-        contentToursIntent.putExtra("fromTourActivity", buttonText);
-        startActivityForResult(contentToursIntent, 999);
+        onOneOfTheContentClick(buttonAsia);
     }
 
     public void onButtonAustraliaClick(View view) {
-        Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
-
-        String buttonText = buttonAustralia.getText().toString();
-        contentToursIntent.putExtra("fromTourActivity", buttonText);
-        startActivityForResult(contentToursIntent, 999);
+        onOneOfTheContentClick(buttonAustralia);
     }
 
     public void onButtonEuropeClick(View view) {
-        Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
-
-        String buttonText = buttonEurope.getText().toString();
-        contentToursIntent.putExtra("fromTourActivity", buttonText);
-        startActivityForResult(contentToursIntent, 999);
+        onOneOfTheContentClick(buttonEurope);
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -89,5 +75,39 @@ public class tourActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG)
                     .show();
         }
+    }
+
+    public void onAboutButtonClick(View view) {
+
+        Intent aboutIntent = new Intent(this, aboutActivity.class);
+        startActivity(aboutIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    public void onMainButtonClick(View view) {
+        Intent mainIntent = new Intent (this, MainActivity.class);
+        startActivity(mainIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    public void onContactButtonClick(View view) {
+        Intent emailIntent = new Intent (this, emailActivity.class);
+        startActivity(emailIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.to_right);
+    }
+
+    private void onOneOfTheContentClick(Button content)
+    {
+        Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
+        buttonText = content.getText().toString();
+        contentToursIntent.putExtra("fromTourActivity", buttonText);
+        startActivityForResult(contentToursIntent, 999);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 }

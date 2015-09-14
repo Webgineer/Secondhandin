@@ -41,6 +41,13 @@ public class aboutActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onTextViewMoreInfoClick(View view) {
+        Intent webViewVolbeat = new Intent (this, webViewAboutVolbeatActivity.class);
+        startActivity(webViewVolbeat);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+
     public void onContactButtonClick(View view) {
         Intent emailIntent = new Intent (this, emailActivity.class);
         startActivity(emailIntent);
@@ -53,15 +60,10 @@ public class aboutActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
-    public void onTextViewMoreInfoClick(View view) {
-        Intent webViewVolbeat = new Intent (this, webViewAboutVolbeatActivity.class);
-        startActivity(webViewVolbeat);
-        overridePendingTransition(R.anim.from_right, R.anim.to_left);
-    }
-
     public void onToursButtonClick(View view) {
         Intent toursIntent = new Intent (this, tourActivity.class);
         startActivity(toursIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
 

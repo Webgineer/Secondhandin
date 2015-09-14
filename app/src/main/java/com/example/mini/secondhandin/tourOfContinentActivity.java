@@ -57,6 +57,7 @@ public class tourOfContinentActivity extends AppCompatActivity {
                 returnIntent.putExtra("fromTourOfContinentActivity", position);
                 setResult(RESULT_OK, returnIntent);
                 finish();
+                overridePendingTransition(R.anim.from_left, R.anim.to_right);
             }
         });
     }
@@ -81,5 +82,36 @@ public class tourOfContinentActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onAboutButtonClick(View view) {
+
+        Intent aboutIntent = new Intent(this, aboutActivity.class);
+        startActivity(aboutIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    public void onMainButtonClick(View view) {
+        Intent mainIntent = new Intent (this, MainActivity.class);
+        startActivity(mainIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    public void onContactButtonClick(View view) {
+        Intent emailIntent = new Intent (this, emailActivity.class);
+        startActivity(emailIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    public void onToursButtonClick(View view) {
+        Intent toursIntent = new Intent (this, tourActivity.class);
+        startActivity(toursIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.to_right);
     }
 }

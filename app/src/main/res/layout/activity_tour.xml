@@ -30,7 +30,6 @@
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"
-            android:onClick="onToursButtonClick"
             />
 
         <Button
@@ -59,6 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="MAIN"
+            android:onClick="onMainButtonClick"
             android:textSize="10dp"
             android:textColor="#fff"
             android:layout_weight="0.25"

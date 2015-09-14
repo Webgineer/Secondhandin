@@ -94,6 +94,7 @@ public class emailActivity extends AppCompatActivity {
     public void onToursButtonClick(View view) {
         Intent toursIntent = new Intent (this, tourActivity.class);
         startActivity(toursIntent);
+        overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }
 
     @Override
