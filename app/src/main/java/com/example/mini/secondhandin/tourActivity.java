@@ -1,12 +1,17 @@
 package com.example.mini.secondhandin;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class tourActivity extends AppCompatActivity {
@@ -19,10 +24,52 @@ public class tourActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour);
-        buttonAmerica = (Button)findViewById(R.id.buttonAmerica);
-        buttonAsia = (Button)findViewById(R.id.buttonAsia);
-        buttonEurope = (Button)findViewById(R.id.buttonEurope);
-        buttonAustralia = (Button)findViewById(R.id.buttonAustralia);
+//        buttonAmerica = (Button)findViewById(R.id.buttonAmerica);
+//        buttonAsia = (Button)findViewById(R.id.buttonAsia);
+//        buttonEurope = (Button)findViewById(R.id.buttonEurope);
+//        buttonAustralia = (Button)findViewById(R.id.buttonAustralia);
+
+        Toast.makeText(getApplicationContext(), "Click on preferred Continent!",
+                Toast.LENGTH_SHORT).show();
+
+        ImageView iv = (ImageView) findViewById (R.id.imageViewContinents);
+        iv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent ev) {
+
+                final int evX = (int) ev.getX();
+                final int evY = (int) ev.getY();
+
+                int touchColor = getHotspotColor(R.id.imageViewContinents, evX, evY);
+
+                int tolerance = 50;
+                if (closeMatch(Color.RED, touchColor, tolerance)) {
+                    Toast.makeText(getApplicationContext(), "America",
+                            Toast.LENGTH_SHORT).show();
+                } else if (closeMatch(Color.GREEN, touchColor, tolerance)) {
+                    Toast.makeText(getApplicationContext(), "Africa",
+                            Toast.LENGTH_SHORT).show();
+
+                } else if (closeMatch(Color.YELLOW, touchColor, tolerance)) {
+                    Toast.makeText(getApplicationContext(), "Australia",
+                            Toast.LENGTH_SHORT).show();
+                } else if (closeMatch(Color.WHITE, touchColor, tolerance)) {
+                    Toast.makeText(getApplicationContext(), "da",
+                            Toast.LENGTH_SHORT).show();
+                }
+                //purple
+                 else if (closeMatch(Color.rgb(145,0,242), touchColor, tolerance)) {
+                Toast.makeText(getApplicationContext(), "Europe",
+                        Toast.LENGTH_SHORT).show();
+                }
+                //orange
+                 else if (closeMatch(Color.rgb(232,159,0), touchColor, tolerance)) {
+            Toast.makeText(getApplicationContext(), "da",
+                    Toast.LENGTH_SHORT).show();
+        }
+                return true;
+            }
+        });
 
     }
 
@@ -63,6 +110,31 @@ public class tourActivity extends AppCompatActivity {
     public void onButtonEuropeClick(View view) {
         onOneOfTheContentClick(buttonEurope);
     }
+
+    public int getHotspotColor (int hotspotId, int x, int y) {
+        ImageView img = (ImageView) findViewById (hotspotId);
+        if (img == null) {
+            Log.d("ImageAreasActivity", "Hot spot image not found");
+            return 0;
+        } else {
+            img.setDrawingCacheEnabled(true);
+            Bitmap hotspots = Bitmap.createBitmap(img.getDrawingCache());
+            if (hotspots == null) {
+                Log.d ("ImageAreasActivity", "Hot spot bitmap was not created");
+                return 0;
+            } else {
+                img.setDrawingCacheEnabled(false);
+                return hotspots.getPixel(x, y);
+            }
+        }
+    }
+
+    private boolean closeMatch (int color1, int color2, int tolerance) {
+        if ((int) Math.abs (Color.red (color1) - Color.red (color2)) > tolerance ) return false;
+        if ((int) Math.abs (Color.green (color1) - Color.green (color2)) > tolerance ) return false;
+        if ((int) Math.abs (Color.blue (color1) - Color.blue (color2)) > tolerance ) return false;
+        return true;
+    } // end match
 
 
 
