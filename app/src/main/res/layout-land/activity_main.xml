@@ -1,9 +1,8 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
     android:background="#fff"
     android:padding="10dp"
     tools:context=".MainActivity"
@@ -14,37 +13,60 @@
             android:layout_height="wrap_content"
             android:src="@drawable/pic_3"
             android:layout_gravity="center"
-            />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+            android:id="@+id/imageView" />
+    <ImageView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/pic_3"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lalal"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lalal"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lalal"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lalal"/>
-        </LinearLayout>
-    </LinearLayout>
+        android:src="@drawable/pic_10"
+        android:layout_gravity="center"
+        android:id="@+id/imageView2"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imageView"
+        android:layout_toStartOf="@+id/linearLayout"
+        android:layout_toLeftOf="@+id/linearLayout"
+        android:scaleType="fitXY" />
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/imageView"
+    android:layout_toEndOf="@+id/imageView"
+    android:layout_alignParentBottom="true"
+    android:weightSum="4"
+    android:id="@+id/linearLayout">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Tours"
+        android:textColor="#fff"
+        android:onClick="onToursButtonClick"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="About"
+        android:onClick="onAboutButtonClick"
+        android:textColor="#fff"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Contact"
+        android:onClick="onContactButtonClick"
+        android:textColor="#fff"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="MAIN"
+        android:onClick="onMainButtonClick"
+        android:textColor="#fff"
+        android:layout_weight="1"/>
+
 </LinearLayout>
+</RelativeLayout>
