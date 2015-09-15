@@ -44,6 +44,10 @@ public class tourOfContinentActivity extends AppCompatActivity {
         {
             values = getResources().getStringArray(R.array.tour_australia_array);
         }
+        else if (currentContent.equals("Africa"))
+        {
+            values = getResources().getStringArray(R.array.tour_africa_array);
+        }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, values);

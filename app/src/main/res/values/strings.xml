@@ -42,4 +42,11 @@
         <item>Random Date, Random Australian place, Random Price</item>
         <item>Random Date, Random Australian place, Random Price</item>
     </string-array>
+    <string-array name="tour_africa_array">
+        <item>Random Date, Random African place, Random Price</item>
+        <item>Random Date, Random African place, Random Price</item>
+        <item>Random Date, Random African place, Random Price</item>
+        <item>Random Date, Random African place, Random Price</item>
+        <item>Random Date, Random African place, Random Price</item>
+    </string-array>
 </resources>

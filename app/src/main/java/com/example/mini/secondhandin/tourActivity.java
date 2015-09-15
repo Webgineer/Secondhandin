@@ -16,9 +16,7 @@ import android.widget.Toast;
 
 public class tourActivity extends AppCompatActivity {
     private Button buttonAmerica, buttonAsia, buttonEurope, buttonAustralia;
-    private String buttonText;
-
-
+    private ImageView continentsImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,41 +30,34 @@ public class tourActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Click on preferred Continent!",
                 Toast.LENGTH_SHORT).show();
 
-        ImageView iv = (ImageView) findViewById (R.id.imageViewContinents);
-        iv.setOnTouchListener(new View.OnTouchListener() {
+       continentsImageView = (ImageView) findViewById (R.id.imageViewContinents);
+        continentsImageView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent ev) {
+
 
                 final int evX = (int) ev.getX();
                 final int evY = (int) ev.getY();
 
-                int touchColor = getHotspotColor(R.id.imageViewContinents, evX, evY);
+                int touchColor = getHotspotColor(R.id.imageViewContinents_data, evX, evY);
 
                 int tolerance = 50;
-                if (closeMatch(Color.RED, touchColor, tolerance)) {
-                    Toast.makeText(getApplicationContext(), "America",
-                            Toast.LENGTH_SHORT).show();
-                } else if (closeMatch(Color.GREEN, touchColor, tolerance)) {
-                    Toast.makeText(getApplicationContext(), "Africa",
-                            Toast.LENGTH_SHORT).show();
-
-                } else if (closeMatch(Color.YELLOW, touchColor, tolerance)) {
-                    Toast.makeText(getApplicationContext(), "Australia",
-                            Toast.LENGTH_SHORT).show();
-                } else if (closeMatch(Color.WHITE, touchColor, tolerance)) {
-                    Toast.makeText(getApplicationContext(), "da",
-                            Toast.LENGTH_SHORT).show();
+                if (ev.getAction() == MotionEvent.ACTION_UP) {
+                    if (closeMatch(Color.RED, touchColor, tolerance)) {
+                        onOneOfTheContinentClick("America");
+                        //green
+                    } else if (closeMatch(Color.rgb(34, 177, 76), touchColor, tolerance)) {
+                        onOneOfTheContinentClick("Africa");
+                    } else if (closeMatch(Color.YELLOW, touchColor, tolerance)) {
+                        onOneOfTheContinentClick("Australia");
+                        //blue
+                    } else if (closeMatch(Color.rgb(63, 72, 204), touchColor, tolerance)) {
+                        onOneOfTheContinentClick("Asia");
+                    } else if (closeMatch(Color.BLACK, touchColor, tolerance)) {
+                        onOneOfTheContinentClick("Europe");
+                    }
+                    return true;
                 }
-                //purple
-                 else if (closeMatch(Color.rgb(145,0,242), touchColor, tolerance)) {
-                Toast.makeText(getApplicationContext(), "Europe",
-                        Toast.LENGTH_SHORT).show();
-                }
-                //orange
-                 else if (closeMatch(Color.rgb(232,159,0), touchColor, tolerance)) {
-            Toast.makeText(getApplicationContext(), "da",
-                    Toast.LENGTH_SHORT).show();
-        }
                 return true;
             }
         });
@@ -95,21 +86,21 @@ public class tourActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onButtonAmericaClick(View view) {
-        onOneOfTheContentClick(buttonAmerica);
-    }
-
-    public void onButtonAsiaClick(View view) {
-        onOneOfTheContentClick(buttonAsia);
-    }
-
-    public void onButtonAustraliaClick(View view) {
-        onOneOfTheContentClick(buttonAustralia);
-    }
-
-    public void onButtonEuropeClick(View view) {
-        onOneOfTheContentClick(buttonEurope);
-    }
+//    public void onButtonAmericaClick(View view) {
+//        onOneOfTheContentClick(buttonAmerica);
+//    }
+//
+//    public void onButtonAsiaClick(View view) {
+//        onOneOfTheContentClick(buttonAsia);
+//    }
+//
+//    public void onButtonAustraliaClick(View view) {
+//        onOneOfTheContentClick(buttonAustralia);
+//    }
+//
+//    public void onButtonEuropeClick(View view) {
+//        onOneOfTheContentClick(buttonEurope);
+//    }
 
     public int getHotspotColor (int hotspotId, int x, int y) {
         ImageView img = (ImageView) findViewById (hotspotId);
@@ -134,7 +125,7 @@ public class tourActivity extends AppCompatActivity {
         if ((int) Math.abs (Color.green (color1) - Color.green (color2)) > tolerance ) return false;
         if ((int) Math.abs (Color.blue (color1) - Color.blue (color2)) > tolerance ) return false;
         return true;
-    } // end match
+    }
 
 
 
@@ -174,11 +165,10 @@ public class tourActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.from_left, R.anim.to_right);
     }
 
-    private void onOneOfTheContentClick(Button content)
+    private void onOneOfTheContinentClick(String continent)
     {
         Intent contentToursIntent = new Intent (this, tourOfContinentActivity.class);
-        buttonText = content.getText().toString();
-        contentToursIntent.putExtra("fromTourActivity", buttonText);
+        contentToursIntent.putExtra("fromTourActivity", continent);
         startActivityForResult(contentToursIntent, 999);
         overridePendingTransition(R.anim.from_right, R.anim.to_left);
     }

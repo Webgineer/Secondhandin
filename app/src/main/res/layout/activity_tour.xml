@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:src="@drawable/pic_3"
-        android:layout_weight="2"
+        android:layout_weight="3"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -121,18 +121,43 @@
             <!--android:textColor="#fff"-->
             <!--android:background="@drawable/rounded_button"/>-->
     <!--</LinearLayout>-->
-
-    <ImageView
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:src="@drawable/continentss"
-        android:id="@+id/imageViewContinents"
-        android:layout_weight="4"/>
+        android:layout_height="150dp"
+        android:layout_weight="0.33">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/continentss"
+            android:id="@+id/imageViewContinents"
+            android:scaleType="fitCenter"
+            android:clickable="false"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/continentss_data"
+            android:id="@+id/imageViewContinents_data"
+            android:visibility="invisible"
+            android:scaleType="fitCenter"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/image_areas"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/p2_ship_mask"-->
+        <!--android:visibility="invisible"-->
+        <!--/>-->
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:src="@drawable/pic_7"
-        android:layout_weight="4" />
+        android:layout_weight="6.2" />
 
 </LinearLayout>
